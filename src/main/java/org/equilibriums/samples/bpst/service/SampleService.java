@@ -1,13 +1,12 @@
 package org.equilibriums.samples.bpst.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.equilibriums.samples.bpst.model.Sample;
 import org.equilibriums.samples.bpst.repository.SampleRepository;
 
@@ -25,8 +24,8 @@ public class SampleService {
         return sampleRepository.save(sample);
     }
     
-    public Page<Sample> getSamples(Pageable pageable) {
-        return sampleRepository.findAll(pageable);
+    public List<Sample> getSamples() {
+        return sampleRepository.findAll();
     }
     
     public Optional<Sample> getSample(Long sampleId) {

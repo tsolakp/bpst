@@ -1,4 +1,4 @@
-Provide REST service to manage Blood sample data for patients. 
+Provides REST service to manage Blood sample data for patients. Uses pre-populated H2 database.
 
 The `/sample` endpoint provides CRUD operation to add/get/delete blood sample markers.
 

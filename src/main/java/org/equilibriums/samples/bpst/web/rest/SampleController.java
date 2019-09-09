@@ -1,6 +1,6 @@
 package org.equilibriums.samples.bpst.web.rest;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.beans.factory.annotation.Autowired;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
-import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import org.equilibriums.samples.bpst.model.Sample;
 import org.equilibriums.samples.bpst.service.SampleService;
@@ -39,9 +36,9 @@ public class SampleController {
     }
     
     @RequestMapping(method = GET, produces = "application/json")
-    @ApiOperation("Returns all blood samples from the database. Supports pagination")
-    public Page<Sample> getSamples(Pageable pageable) {
-        return sampleService.getSamples(pageable);
+    @ApiOperation("Returns all blood samples from the database.")
+    public List<Sample> getSamples() {
+        return sampleService.getSamples();
     }
     
     @RequestMapping(method = GET, value="/{sampleId}", produces = "application/json")
