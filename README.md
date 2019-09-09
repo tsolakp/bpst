@@ -1,4 +1,6 @@
-Provide REST service to manage Blood sample data for patients.
+Provide REST service to manage Blood sample data for patients. 
+The `/sample` endpoint provides CRUD operation to add/get/delete blood sample markers.
+The `/sample-report` endpoint will provide the percentage of patients that have similar blood marker levels against a single blood sample.
 
 To run the application:
 
