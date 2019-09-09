@@ -5,7 +5,7 @@ import java.util.Map;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(description = "Class representing a blood sample that are compared against sample in the database.")
+@ApiModel(description = "Class representing a blood sample that are compared against samples in the database.")
 public class SampleReport {
     private Sample sample;
     

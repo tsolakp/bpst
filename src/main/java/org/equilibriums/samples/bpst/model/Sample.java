@@ -29,7 +29,7 @@ public class Sample {
     private String patientId;
     
     @ApiModelProperty(notes = "Blood markers taken from the patient's blood")
-    @OneToMany(mappedBy="sample", cascade=CascadeType.ALL)
+    @OneToMany(mappedBy="sample", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Set<Marker> markers;
     
     public Sample() {}
@@ -76,7 +76,7 @@ public class Sample {
         private Double markerLevel;
         
         @JsonIgnore
-        @ManyToOne(fetch=FetchType.EAGER)
+        @ManyToOne
         @JoinColumn(name="sample_id", nullable=false)
         private Sample sample;
         

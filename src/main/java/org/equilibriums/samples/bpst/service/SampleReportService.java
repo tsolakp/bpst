@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +15,7 @@ import org.equilibriums.samples.bpst.repository.SampleReportRepository;
 import org.equilibriums.samples.bpst.repository.SampleRepository;
 
 @Service
+@Transactional
 public class SampleReportService {
     private final SampleRepository sampleRepository; 
     private final SampleReportRepository sampleReportRepository;

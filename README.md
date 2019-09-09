@@ -1,6 +1,12 @@
 Provide REST service to manage Blood sample data for patients. 
+
 The `/sample` endpoint provides CRUD operation to add/get/delete blood sample markers.
+
 The `/sample-report` endpoint will provide the percentage of patients that have similar blood marker levels against a single blood sample.
+
+The `/sample-stats` endpoint will provide histogram distribution of sample marker levels across patients..
+
+The sample blood marker levels have been taken from [here](https://www.healthline.com/health/blood-tests#important-blood-tests).
 
 To run the application:
 

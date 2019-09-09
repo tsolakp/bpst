@@ -27,7 +27,7 @@ public class SampleReportController {
     }
     
     @RequestMapping(method = GET, value="/{sampleId}", produces = "application/json")
-    @ApiOperation("Returns blood sample report with comparision report against existing patient samples. Example sampleIds - 4, 9, 14, 19, 24, 29, 34, 39, 44, 49")
+    @ApiOperation("Returns blood sample report with comparision against existing patient samples. Example sampleIds - 4, 9, 14, 19, 24, 29, 34, 39, 44, 49")
     public SampleReport getSample(@PathVariable Long sampleId) {
         return sampleReportService.getSampleReport(sampleId).orElseThrow( () ->
             new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find sample for - " + sampleId) );
